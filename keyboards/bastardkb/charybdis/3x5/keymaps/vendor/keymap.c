@@ -16,6 +16,13 @@
  */
 #include QMK_KEYBOARD_H
 
+// --- CUSTOM SHIFT + SUPPR = DEL OVERRIDE ---
+const key_override_t delete_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
+
+const key_override_t *key_overrides[] = {
+    &delete_override
+};
+
 #ifdef CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 #    include "timer.h"
 #endif // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE

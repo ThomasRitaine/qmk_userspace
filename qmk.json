@@ -8,6 +8,14 @@
         [
             "bastardkb/charybdis/4x6_left/splinktegrated_rev1",
             "vendor"
+        ],
+        [
+            "bastardkb/charybdis/3x5/splinktegrated_rev1",
+            "vendor"
+        ],
+        [
+            "bastardkb/charybdis/3x5_left/splinktegrated_rev1",
+            "vendor"
         ]
     ]
 }
