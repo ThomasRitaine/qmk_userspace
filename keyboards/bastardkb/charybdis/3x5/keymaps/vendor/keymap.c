@@ -16,11 +16,18 @@
  */
 #include QMK_KEYBOARD_H
 
-// --- CUSTOM SHIFT + SUPPR = DEL OVERRIDE ---
+// --- CUSTOM KEY OVERRIDES ---
+
+// Shift + Backspace sends Delete
 const key_override_t delete_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
 
+// Shift + ! sends $
+const key_override_t exlm_to_dollar_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_RBRC);
+
 const key_override_t *key_overrides[] = {
-    &delete_override
+    &delete_override,
+    &exlm_to_dollar_override,
+    NULL
 };
 
 #ifdef CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
