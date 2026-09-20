@@ -19,12 +19,14 @@
 // --- CUSTOM KEY OVERRIDES ---
 
 // Shift + Backspace sends Delete
+const key_override_t delete_lt_override = ko_make_basic(MOD_MASK_SHIFT, LT(2, KC_BSPC), KC_DEL);
 const key_override_t delete_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
 
 // Shift + ! sends $
 const key_override_t exlm_to_dollar_override = ko_make_basic(MOD_MASK_SHIFT, KC_SLSH, KC_RBRC);
 
 const key_override_t *key_overrides[] = {
+    &delete_lt_override,
     &delete_override,
     &exlm_to_dollar_override,
     NULL
