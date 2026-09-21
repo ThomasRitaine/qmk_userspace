@@ -1,0 +1,199 @@
+layout:
+    qmk_info_json: "charybdis_info.json"
+
+layers:
+    Base:
+        # Row 1 (Top): A Z E R T | Y U I O P
+        - [A, Z, E, R, T, Y, U, I, O, P]
+
+        # Row 2 (Home): Q S D F G | H J K L M (Home-row modifiers)
+        - [
+              { t: Q, h: Alt },
+              { t: S, h: Gui },
+              { t: D, h: Shift },
+              { t: F, h: Ctrl },
+              G,
+              H,
+              { t: J, h: Ctrl },
+              { t: K, h: Shift },
+              { t: L, h: Gui },
+              { t: M, h: Alt },
+          ]
+
+        # Row 3 (Bottom): W X C V B | N , ; : ! (with shifted punctuation)
+        - [
+              W,
+              X,
+              C,
+              { t: V, h: MOUSE },
+              B,
+              N,
+              { t: ",", s: "?" },
+              { t: ";", s: "." },
+              { t: ":", s: "/" },
+              { t: "!", s: "$" },
+          ]
+
+        # Thumbs: Left (Tab, Bspc [Shift->Del], Esc) | Right (Enter, Space)
+        - [
+              { t: Tab, h: MEDIA },
+              { t: Bspc, h: NAV, s: Del },
+              { t: Esc, h: FN },
+              { t: Enter, h: SYM },
+              { t: Space, h: NUM },
+          ]
+
+    FN:
+        # Row 1: F7 - F10
+        - ["", F7, F8, F9, F10, "", "", "", "", ""]
+
+        # Row 2: F4 - F6, F11 | Right hand passes through (▽) to Base modifiers
+        - [
+              "",
+              F4,
+              F5,
+              F6,
+              F11,
+              "",
+              { t: "▽", type: trans },
+              { t: "▽", type: trans },
+              { t: "▽", type: trans },
+              { t: "▽", type: trans },
+          ]
+
+        # Row 3: F1 - F3, F12
+        - ["", F1, F2, F3, F12, "", "", "", "", ""]
+
+        # Thumbs
+        - ["", "", { type: held }, "", ""]
+
+    NAV:
+        # Row 1
+        - ["", "", "", "", "", "", "", "", "", ""]
+
+        # Row 2: Left hand passes through (▽) to Base modifiers | Vim arrows on H, J, K, L
+        - [
+              { t: "▽", type: trans },
+              { t: "▽", type: trans },
+              { t: "▽", type: trans },
+              { t: "▽", type: trans },
+              "",
+              Left,
+              Down,
+              Up,
+              Right,
+              "",
+          ]
+
+        # Row 3
+        - ["", "", "", "", "", "", "", "", "", ""]
+
+        # Thumbs
+        - ["", { type: held }, "", "", ""]
+
+    MEDIA:
+        # Row 1: RGB Controls
+        - [
+              "",
+              "RGB Prev",
+              "RGB Tog",
+              "RGB Next",
+              "",
+              "",
+              "RGB Prev",
+              "RGB Tog",
+              "RGB Nextl",
+              "",
+          ]
+
+        # Row 2: Volume & Track navigation
+        - [
+              Prev,
+              "Vol -",
+              Mute,
+              "Vol +",
+              Next,
+              Prev,
+              "Vol -",
+              Mute,
+              "Vol +",
+              Next,
+          ]
+
+        # Row 3: Brightness
+        - [
+              "",
+              "",
+              "Bright -",
+              "Bright +",
+              "",
+              "",
+              "",
+              "Bright -",
+              "Bright +",
+              "",
+          ]
+
+        # Thumbs: Play / Stop controls
+        - [{ type: held }, Play, Stop, Stop, Play]
+
+    MOUSE:
+        # Row 1
+        - ["", "", "", "", "", "", "", "", "", ""]
+
+        # Row 2: Both hands pass through (▽) to Base modifiers
+        - [
+              { t: "▽", type: trans },
+              { t: "▽", type: trans },
+              { t: "▽", type: trans },
+              { t: "▽", type: trans },
+              "",
+              "",
+              { t: "▽", type: trans },
+              { t: "▽", type: trans },
+              { t: "▽", type: trans },
+              { t: "▽", type: trans },
+          ]
+
+        # Row 3: Sniping DPI on X | Layer held on V
+        - ["", Snipe, "", { type: held }, "", "", "", "", "", ""]
+
+        # Thumbs: Mouse clicks (Middle, Left, Right)
+        - ["Mid Click", "Left Click", "Right Click", "", ""]
+
+    NUM:
+        # Row 1: 7 8 9
+        - ["", "7", "8", "9", "", "", "", "", "", ""]
+
+        # Row 2: 4 5 6 | Right hand passes through (▽) to Base modifiers
+        - [
+              "",
+              "4",
+              "5",
+              "6",
+              "",
+              "",
+              { t: "▽", type: trans },
+              { t: "▽", type: trans },
+              { t: "▽", type: trans },
+              { t: "▽", type: trans },
+          ]
+
+        # Row 3: 1 2 3
+        - ["", "1", "2", "3", "", "", "", "", "", ""]
+
+        # Thumbs: 0 and Num Lock on left thumbs | Space held on right
+        - ["", "0", "Num Lock", "", { type: held }]
+
+    SYM:
+        # Row 1: @ € ( ) ù é è %
+        - ["@", "", "€", "", "(", ")", "ù", "é", "è", "%"]
+
+        # Row 2: & ~ " ' [ ] + - = *
+        - ["&", "~", '"', "'", "[", "]", "+", "-", "=", "*"]
+
+        # Row 3: < > # ` { } _ \
+        - ["<", ">", "#", "`", "{", "}", "", "_", "\\", ""]
+
+        # Thumbs
+        - ["", "", "", { type: held }, ""]
